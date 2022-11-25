@@ -79,7 +79,7 @@ public class HotelPage extends AbstractClass{
 		WebElement cityTextArea = driver.findElement(cityTextArealocator);
 		System.out.println(input.get("cityname"));
 		cityTextArea.sendKeys(input.get("cityname").substring(0, 4).toString());
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 		List<WebElement> cityList = driver.findElements(By.xpath("//ul[@id='select2-hotels_city-results']/li"));
 		
 		for (int i = 0; i < cityList.size(); i++) {
