@@ -47,26 +47,26 @@ public class VisaPage extends AbstractClass {
 
 	public String VisaSubmission(String fromCountry, String toCountry, String visaExpectedMonth, String visaExpectedDate,String firstName,String lastName,String SignupEmail,String Phone)
 			throws InterruptedException {
-		ElementToBeClickable(visa_but);
+		JavaScriptExecutorClick(visa_but);
 		Thread.sleep(4000);
 		WebElement fromCountryDropBox = driver.findElement(fromCountrylocator);
-		fromCountryDropBox.click();
+		JavaScriptExecutorClick(fromCountryDropBox);
 		WebElement fromCountryTextArea = driver.findElement(fromCountryTextArealocator);
 		fromCountryTextArea.sendKeys(fromCountry.substring(0, 4).toString());
 		Thread.sleep(1000);
 		List<WebElement> fromCountryList = driver.findElements(fromCountryListlocator);
 		DropBoxSelector(fromCountryList,fromCountry);
 		WebElement toCountryDropBox = driver.findElement(toCountrylocator);
-		toCountryDropBox.click();
+		JavaScriptExecutorClick(toCountryDropBox);
 		WebElement toCountryTextArea = driver.findElement(toCountrytextArealocator);
 		toCountryTextArea.sendKeys(toCountry.substring(0, 4).toString());
 		List<WebElement> toCountryList = driver.findElements(toCountryListlocator);
 		DropBoxSelector(toCountryList,toCountry);
 		WebElement datedropBox = driver.findElement(dateDropBoxlocator);
-		datedropBox.click();
+		JavaScriptExecutorClick(datedropBox);
 		DateSelector(monthlocator,nextlocator,dateslocator,visaExpectedMonth,visaExpectedDate);
 		WebElement visaSearch = driver.findElement(visaSearchlocator);
-		visaSearch.click();
+		JavaScriptExecutorClick(visaSearch);
 
 		WebElement first_name = driver.findElement(first_namelocator);
         VisibilityWebElementCheck(first_name);
@@ -79,7 +79,7 @@ public class VisaPage extends AbstractClass {
 		email.sendKeys(SignupEmail);
 		phone.sendKeys(Phone);
 		WebElement visaSubmit = driver.findElement(visaSubmitlocator);
-        visaSubmit.click();
+		JavaScriptExecutorClick(visaSubmit);
        
         
         WebElement visaacknowledge = driver.findElement(visaAcknowledgelocator);

@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 52.032 s <<< FAILURE! - in TestSuite
+Framework.FlightBookingTest.FlightBookingTest[{returnExpectedDate=15, returnExpectedMonth=April 2023, flyingTo=Kuwait, Kuwait, departureExpectedDate=28, flyingFrom=Dubai, United Arab Emirates, Adults=2, Infants=1, Child=1, departureExpectedMonth=March 2023, Nationality=Andorra, Result=Found}](1)  Time elapsed: 18.855 s  <<< FAILURE!
+java.lang.AssertionError: Booking Error expected [true] but found [false]
+	at Framework.FlightBookingTest.FlightBookingTest(FlightBookingTest.java:24)
+

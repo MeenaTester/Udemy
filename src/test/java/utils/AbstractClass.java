@@ -35,7 +35,8 @@ public class AbstractClass extends BaseTest{
 	
 	
 	 public void ElementToBeClickable(WebElement elem)                                
-     {       		                                                                    
+     {     
+		 expWait = new WebDriverWait(driver,Duration.ofSeconds(100));
          expWait.until(ExpectedConditions.elementToBeClickable(elem)).click();;                  
      }
 	 public void WaitForListToBeUpdated(By loc) throws InterruptedException                                
@@ -53,8 +54,8 @@ public class AbstractClass extends BaseTest{
      }
 	 public void DateSelector(By monthlocator,By nextlocator,By dateslocator,String ExpectedMonth,String ExpectedDate)
 	 {
-		    while (!driver.findElement(monthlocator).getText().equalsIgnoreCase(ExpectedMonth)) {
-				driver.findElement(nextlocator).click();
+		    while (!driver.findElement(monthlocator).getAttribute("innerText").equalsIgnoreCase(ExpectedMonth)) {
+		    	driver.findElement(nextlocator).click();
 				// break;
 			}
 			List<WebElement> dates = driver.findElements(dateslocator);
@@ -87,6 +88,7 @@ public class AbstractClass extends BaseTest{
 
 			}
 	 }
+	 
 	 public void TravellersDetails(By Inclocator,By Declocator,String detailtype,int CurrentCount)
 		{
 			while (Integer.parseInt(detailtype) > CurrentCount) {

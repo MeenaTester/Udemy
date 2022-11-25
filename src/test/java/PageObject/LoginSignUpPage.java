@@ -25,6 +25,9 @@ public class LoginSignUpPage extends AbstractClass{
 	@FindBy(xpath="//a[text()='Customer Signup']")
 	WebElement custSignButt;
 	
+	@FindBy(xpath="//a[text()='Customer Login']")
+	WebElement custLogInButt;
+	
 	By first_namelocator=By.name("first_name");
 	By last_namelocator=By.name("last_name");
 	By emaillocator=By.name("email");
@@ -47,8 +50,8 @@ public class LoginSignUpPage extends AbstractClass{
 	
 	public void signUpNewUser(String firstName,String lastName,String SignupEmail,String SignUpPassword,String Phone) throws InterruptedException
 	{
-		ElementToBeClickable(AccountButt);
-		custSignButt.click();
+		JavaScriptExecutorClick(AccountButt);
+		JavaScriptExecutorClick(custSignButt);
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(700,700)");
@@ -76,9 +79,12 @@ public class LoginSignUpPage extends AbstractClass{
 	}
 	public void LoginCurrentUser(String Username,String Password) throws InterruptedException
 	{
+		ElementToBeClickable(AccountButt);
+		JavaScriptExecutorClick(custLogInButt);
+		Thread.sleep(2000);
 		loginEmail.sendKeys(Username);
 		loginPassword.sendKeys(Password);
 		cookie_stopRemoval(cookiestoplocator);
-		loginbutton.click();
+		JavaScriptExecutorClick(loginbutton);
 	}
 }

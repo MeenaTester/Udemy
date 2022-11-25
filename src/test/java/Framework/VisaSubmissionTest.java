@@ -18,7 +18,7 @@ public class VisaSubmissionTest extends BaseTest{
 
 public  VisaPage visapage;
    
-   @Test(dataProvider="getData")
+   @Test(dataProvider="getData",groups={"Sanity"})
    public void CheckVisaSubmission(HashMap<String,String> input) throws InterruptedException, IOException
    {
 	   visapage = getVisaPageInstance();

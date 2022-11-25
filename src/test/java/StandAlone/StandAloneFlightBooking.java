@@ -36,7 +36,6 @@ public class StandAloneFlightBooking {
 	static String returnExpectedMonth = "April 2023";
 	static String returnExpectedDate = "15";
 
-	
 	static String Adults = "2";
 	static String Child = "1";
 	static String Infants = "2";
@@ -93,83 +92,133 @@ public class StandAloneFlightBooking {
 		WebElement flyingToElem = driver.findElement(By.xpath("//input[@placeholder='To Destination']"));
 		flyingToElem.sendKeys(flyingTo.substring(0, 4).toString());
 		selectDynamicDropDown(flyingTo);
-		
+
 		WebElement departureDate = driver.findElement(By.id("departure"));
 		departureDate.click();
 		SelectDatesFromDropDown(departureExpectedMonth, departureExpectedDate, 1);
 		SelectDatesFromDropDown(returnExpectedMonth, returnExpectedDate, 2);
-		
-		WebElement travellerCOmboBox=driver.findElement(By.xpath("//label[text()='Passengers ']/following-sibling::div"));
+
+		WebElement travellerCOmboBox = driver
+				.findElement(By.xpath("//label[text()='Passengers ']/following-sibling::div"));
 		travellerCOmboBox.click();
-		
+
 		WebElement adultsCount = driver.findElement(By.id("fadults"));
 		int adultsCurrentCount = Integer.parseInt(adultsCount.getAttribute("value"));
 		By adultsInclocator = By.xpath("//input[@id='fadults']/following-sibling::div[@class='qtyInc']");
-		By adultsDeclocator =By.xpath("//input[@id='fadults']/parent::div/div[@class='qtyDec']");
-		TravellersDetails(adultsInclocator,adultsDeclocator,Adults,adultsCurrentCount);
-		
+		By adultsDeclocator = By.xpath("//input[@id='fadults']/parent::div/div[@class='qtyDec']");
+		TravellersDetails(adultsInclocator, adultsDeclocator, Adults, adultsCurrentCount);
+
 		WebElement childCount = driver.findElement(By.id("fchilds"));
 		int childCurrentCount = Integer.parseInt(childCount.getAttribute("value"));
 		By childInclocator = By.xpath("//input[@id='fchilds']/following-sibling::div[@class='qtyInc']");
-		By childDeclocator =By.xpath("//input[@id='fchilds']/parent::div/div[@class='qtyDec']");
-		TravellersDetails(childInclocator,childDeclocator,Child,childCurrentCount);
-		
+		By childDeclocator = By.xpath("//input[@id='fchilds']/parent::div/div[@class='qtyDec']");
+		TravellersDetails(childInclocator, childDeclocator, Child, childCurrentCount);
+
 		WebElement infantCount = driver.findElement(By.id("finfant"));
-		int infantCurrentCount = Integer.parseInt(childCount.getAttribute("value"));
+		int infantCurrentCount = Integer.parseInt(infantCount.getAttribute("value"));
 		By infantInclocator = By.xpath("//input[@id='finfant']/following-sibling::div[@class='qtyInc']");
-		By infantDeclocator =By.xpath("//input[@id='finfant']/parent::div/div[@class='qtyDec']");
-		TravellersDetails(infantInclocator,infantDeclocator,Infants,infantCurrentCount);
-		
+		By infantDeclocator = By.xpath("//input[@id='finfant']/parent::div/div[@class='qtyDec']");
+		TravellersDetails(infantInclocator, infantDeclocator, Infants, infantCurrentCount);
+
 		WebElement searchButt = driver.findElement(By.id("flights-search"));
 		searchButt.click();
+
+		CheckTravellersValues();
 	}
-	
-	 public static void TravellersDetails(By Inclocator,By Declocator,String detailtype,int CurrentCount)
-		{
-			while (Integer.parseInt(detailtype) > CurrentCount) {
-				driver.findElement(Inclocator).click();
-				CurrentCount++;
-			}
-			while (Integer.parseInt(detailtype) < CurrentCount) {
-				driver.findElement(Declocator).click();
-				CurrentCount--;
-			}
+
+	public static void CheckTravellersValues() {
+		WebElement DetailsTxtCheck = driver.findElement(By.xpath("//strong[text()='Adults']/parent::p"));
+		String ExpectedTravellersText = "Adults " + Adults + " Childs " + Child + " Infants " + Infants;
+		String ActualTravellersText = DetailsTxtCheck.getAttribute("innerText");
+		System.out.println(ExpectedTravellersText + " :: " + ActualTravellersText);
+		WebElement DatesTxtCheck = driver.findElement(By.xpath("//strong[contains(text(),'Dates')]/parent::p"));
+		System.out.println(DatesTxtCheck.getAttribute("innerText"));
+
+		WebElement BookNowButton = driver.findElement(By.xpath("//span[text()='Book Now ']"));
+		WebDriverWait expWait = new WebDriverWait(driver, Duration.ofSeconds(500));
+		expWait.until(ExpectedConditions.elementToBeClickable(BookNowButton)).click();
+		WebElement first_name = driver.findElement(By.name("firstname"));
+
+		expWait = new WebDriverWait(driver, Duration.ofSeconds(225));
+		expWait.until(ExpectedConditions.visibilityOf(first_name));
+		WebElement last_name = driver.findElement(By.name("lastname"));
+		WebElement email = driver.findElement(By.name("email"));
+		WebElement phone = driver.findElement(By.name("phone"));
+		WebElement address = driver.findElement(By.name("address"));
+
+		first_name.sendKeys("Meena");
+		last_name.sendKeys("Kasi");
+		email.sendKeys("hoomails@gmail.com");
+		phone.sendKeys("9176327518");
+		address.sendKeys("dummy address");
+		WebElement countryDropBox = driver.findElement(By.cssSelector("span[id*='select2-country']"));
+		WebElement nationalityDropBox = driver.findElement(By.cssSelector("span[id*='select2-nationality']"));
+		WebElement totalPrice = driver.findElement(By.xpath("//span[text()='Total Price:']/following-sibling::strong"));
+		String displayedTotalPrice = totalPrice.getText();
+
+		WebElement payPal = driver.findElement(By.id("gateway_paypal"));
+		WebElement agreechb = driver.findElement(By.id("agreechb"));
+		WebElement confirmBookingBut = driver.findElement(By.id("booking"));
+
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("arguments[0].click()", payPal);
+		jse.executeScript("arguments[0].click()", agreechb);
+		jse.executeScript("arguments[0].click()", confirmBookingBut);
+
+	}
+
+	public static void TravellersDetails(By Inclocator, By Declocator, String detailtype, int CurrentCount) {
+		while (Integer.parseInt(detailtype) > CurrentCount) {
+			driver.findElement(Inclocator).click();
+			CurrentCount++;
 		}
+		while (Integer.parseInt(detailtype) < CurrentCount) {
+			driver.findElement(Declocator).click();
+			CurrentCount--;
+		}
+	}
 
 	public static void selectDynamicDropDown(String cityname) {
 		List<WebElement> flyingFromList = driver
 				.findElements(By.xpath("//div[contains(@class,'autocomplete-results troll intro')]/div"));
 		for (int i = 1; i <= flyingFromList.size(); i++) {
-			if (driver.findElement(By.xpath("//div[contains(@class,'autocomplete-results troll intro')]/div[" + i + "]/div[2]")).getText().equalsIgnoreCase(cityname)) {
-				driver.findElement(By.xpath("//div[contains(@class,'autocomplete-results troll intro')]/div[" + i + "]/div[2]")).click();
+			if (driver
+					.findElement(By
+							.xpath("//div[contains(@class,'autocomplete-results troll intro')]/div[" + i + "]/div[2]"))
+					.getText().equalsIgnoreCase(cityname)) {
+				driver.findElement(
+						By.xpath("//div[contains(@class,'autocomplete-results troll intro')]/div[" + i + "]/div[2]"))
+						.click();
 				break;
 			}
 		}
 	}
+
 	public static void SelectDatesFromDropDown(String ExpectedMonth, String ExpectedDate, int k) {
-		while (!driver
-				.findElement(By.xpath("//div[@class='datepicker dropdown-menu'][" + k
-						+ "]/div/table[@class=' table-condensed']/thead/tr/th[@class='switch']"))
-				.getText().equalsIgnoreCase(ExpectedMonth)) {
-			if(driver
+		//while (driver.findElement(By.xpath("//div[@class='datepicker dropdown-menu'][" + k
+				//+ "]/div/table[@class=' table-condensed']/thead/tr/th[@class='switch']")).getText() != "") {
+			while (!driver
 					.findElement(By.xpath("//div[@class='datepicker dropdown-menu'][" + k
 							+ "]/div/table[@class=' table-condensed']/thead/tr/th[@class='switch']"))
-					.getText()!="")
-			{
-				/*
-				 * System.out.println(driver
-				 * .findElement(By.xpath("//div[@class='datepicker dropdown-menu'][" + k +
-				 * "]/div/table[@class=' table-condensed']/thead/tr/th[@class='switch']"))
-				 * .getText()+"::"+ExpectedMonth);
-				 */
-			
-				
-			driver.findElement(By.xpath("//div[@class='datepicker dropdown-menu'][" + k
-					+ "]/div/table[@class=' table-condensed']/thead/tr/th[@class='next']")).click();
-			 //break;
+					.getText().equalsIgnoreCase(ExpectedMonth)) {
+				if (driver
+						.findElement(By.xpath("//div[@class='datepicker dropdown-menu'][" + k
+								+ "]/div/table[@class=' table-condensed']/thead/tr/th[@class='switch']"))
+						.getText() != "") {
+					/*
+					 * System.out.println(driver
+					 * .findElement(By.xpath("//div[@class='datepicker dropdown-menu'][" + k +
+					 * "]/div/table[@class=' table-condensed']/thead/tr/th[@class='switch']"))
+					 * .getText()+"::"+ExpectedMonth);
+					 */
+
+					driver.findElement(By.xpath("//div[@class='datepicker dropdown-menu'][" + k
+							+ "]/div/table[@class=' table-condensed']/thead/tr/th[@class='next']")).click();
+					// break;
+				}
+
 			}
-		
-	}
+		//}
 
 		List<WebElement> dates = driver.findElements(By.xpath("//div[@class='datepicker dropdown-menu'][" + k
 				+ "]/div/table[@class=' table-condensed']/tbody/tr/td[@class='day ']"));

@@ -11,6 +11,8 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -23,6 +25,7 @@ import org.testng.annotations.BeforeMethod;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import PageObject.FlightPage;
 import PageObject.HotelPage;
 import PageObject.LoginSignUpPage;
 import PageObject.VisaPage;
@@ -44,6 +47,7 @@ public class BaseTest {
 	public LoginSignUpPage loginSignUpPage;
 	public VisaPage visapage;
 	public HotelPage hotelpage;
+	public FlightPage flightpage;
 	public String[] personalDetailsArray;
 	public Properties prop;
     public BaseTest () throws IOException
@@ -111,6 +115,12 @@ public class BaseTest {
 		loginSignUpPage = new LoginSignUpPage(driver);
 		return loginSignUpPage;
 	}
+	
+	public FlightPage getFlightPage() throws IOException
+	{
+		flightpage = new FlightPage(driver);
+		return flightpage;
+	}
 
 	public VisaPage getVisaPageInstance() throws IOException {
 		visapage = new VisaPage(driver);
@@ -134,6 +144,14 @@ public class BaseTest {
         // {map, map}
 
 	}
+	public String getSCreenShot(String testCaseName,WebDriver driver1) throws IOException
+	{
+		TakesScreenshot ts= (TakesScreenshot)driver;
+		File srcFile = ts.getScreenshotAs(OutputType.FILE);
+		File destFile = new File(System.getProperty("user.dir")+".\\reports\\"+testCaseName+".png");
+		FileUtils.copyFile(srcFile, destFile);
+		return System.getProperty("user.dir")+".\\reports\\"+testCaseName+".png";
+	}
 	
 	public String getpersonalDetailsArray()
 	{
@@ -141,10 +159,10 @@ public class BaseTest {
 		System.out.println("get: "+firstName);
 		return firstName;
 	}
-
+    
 	@AfterMethod(alwaysRun = true)
-	public void closeBrowser() {
-		System.out.println("test over");
+	public void closeBrowser() { 
+		System.out.println("test over "+driver);
 		driver.close();
 		// driver=null;
 	}

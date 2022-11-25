@@ -16,7 +16,7 @@ public class HotelBookingTest extends BaseTest{
 		// TODO Auto-generated constructor stub
 	}
 	public HotelPage hotelpage;
-	@Test(dataProvider = "getData")
+	@Test(dataProvider = "getData",groups={"Regression"})
 	public void HotelBookingTest(HashMap<String,String> input) throws InterruptedException, IOException
 	{
 		hotelpage = getHotelPageInstance();

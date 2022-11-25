@@ -6,7 +6,7 @@
       <class name="Framework.HotelBookingTest">
         <methods>
           <include name="closeBrowser"/>
-          <include name="HotelBookingTest" invocation-numbers="1"/>
+          <include name="HotelBookingTest" invocation-numbers="0"/>
           <include name="getDriverinstance"/>
         </methods>
       </class> <!-- Framework.HotelBookingTest -->

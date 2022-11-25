@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Nov 07 20:44:09 IST 2022</td>
+<td>Started on:</td><td>Fri Nov 25 04:36:20 IST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>67 seconds (67489 ms)</td>
+<tr><td>Total time:</td><td>47 seconds (47796 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,17 +76,17 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Framework.HotelBookingTest.HotelBookingTest()'><b>HotelBookingTest</b><br>Test class: Framework.HotelBookingTest<br>Parameters: {CheckInExpectedDate=2, cityname=Indiana,United States, CheckOutExpectedDate=5, Adults=1, CheckInExpectedMonth=September 2023, HotelName=Oasis Beach Tower, Child=0, Nationality=India, CheckOutExpectedMonth=September 2023, Rooms=1, Result=Not Found}</td>
+<td title='Framework.HotelBookingTest.HotelBookingTest()'><b>HotelBookingTest</b><br>Test class: Framework.HotelBookingTest<br>Parameters: {CheckInExpectedDate=1, cityname=London,United Kingdom, CheckOutExpectedDate=3, Adults=2, CheckInExpectedMonth=June 2026, HotelName=Oasis Beach Tower, Child=1, Nationality=Andorra, CheckOutExpectedMonth=June 2026, Rooms=1, Result=Not Found}</td>
 <td><div><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=107.0.5304.88)
+  (Session info: chrome=107.0.5304.107)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
 Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
 System info: host: &apos;LAPTOP-J66Q2AT5&apos;, ip: &apos;192.168.1.79&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ae9d3b35bc250d17e9d410eb1917ced4, getElementText {id=36dc474b-6783-4394-a915-83ac0d830edd}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.88, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\revan\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52775}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52775/devtoo..., se:cdpVersion: 107.0.5304.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (ae9d3b35bc250d17e9d410eb1917ced4)] -&gt; xpath: //ul[@id=&apos;select2-hotels_city-results&apos;]/li]
-Session ID: ae9d3b35bc250d17e9d410eb1917ced4
+Command: [3be7e441b3744ec5f2e55b69d18cc2eb, getElementText {id=a61c49b2-921d-447f-81d0-697149c3f754}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\revan\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50435}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50435/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (3be7e441b3744ec5f2e55b69d18cc2eb)] -&gt; xpath: //ul[@id=&apos;select2-hotels_city-results&apos;]/li]
+Session ID: 3be7e441b3744ec5f2e55b69d18cc2eb
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -101,7 +101,7 @@ Session ID: ae9d3b35bc250d17e9d410eb1917ced4
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
 	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:207)
-	at PageObject.HotelPage.BookHotel(HotelPage.java:89)
+	at PageObject.HotelPage.BookHotel(HotelPage.java:87)
 	at Framework.HotelBookingTest.HotelBookingTest(HotelBookingTest.java:23)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -131,17 +131,17 @@ Session ID: ae9d3b35bc250d17e9d410eb1917ced4
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace901614537", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace901614537'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=107.0.5304.88)
+</pre></div><a href='#' onClick='toggleBox("stack-trace82328216", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace82328216'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=107.0.5304.107)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
 Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
 System info: host: &apos;LAPTOP-J66Q2AT5&apos;, ip: &apos;192.168.1.79&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ae9d3b35bc250d17e9d410eb1917ced4, getElementText {id=36dc474b-6783-4394-a915-83ac0d830edd}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.88, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\revan\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52775}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52775/devtoo..., se:cdpVersion: 107.0.5304.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (ae9d3b35bc250d17e9d410eb1917ced4)] -&gt; xpath: //ul[@id=&apos;select2-hotels_city-results&apos;]/li]
-Session ID: ae9d3b35bc250d17e9d410eb1917ced4
+Command: [3be7e441b3744ec5f2e55b69d18cc2eb, getElementText {id=a61c49b2-921d-447f-81d0-697149c3f754}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\revan\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50435}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50435/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (3be7e441b3744ec5f2e55b69d18cc2eb)] -&gt; xpath: //ul[@id=&apos;select2-hotels_city-results&apos;]/li]
+Session ID: 3be7e441b3744ec5f2e55b69d18cc2eb
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -156,7 +156,7 @@ Session ID: ae9d3b35bc250d17e9d410eb1917ced4
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
 	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:207)
-	at PageObject.HotelPage.BookHotel(HotelPage.java:89)
+	at PageObject.HotelPage.BookHotel(HotelPage.java:87)
 	at Framework.HotelBookingTest.HotelBookingTest(HotelBookingTest.java:23)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -187,22 +187,8 @@ Session ID: ae9d3b35bc250d17e9d410eb1917ced4
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>13</td>
-<td>Framework.HotelBookingTest@3e8c3cb</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='Framework.HotelBookingTest.HotelBookingTest()'><b>HotelBookingTest</b><br>Test class: Framework.HotelBookingTest<br>Parameters: {CheckInExpectedDate=1, cityname=Dubai,United Arab Emirates, CheckOutExpectedDate=3, Adults=2, CheckInExpectedMonth=June 2023, HotelName=Oasis Beach Tower, Child=1, Nationality=Andorra, CheckOutExpectedMonth=June 2023, Rooms=1, Result=Found}</td>
-<td></td>
-<td>39</td>
-<td>Framework.HotelBookingTest@3e8c3cb</td></tr>
+<td>26</td>
+<td>Framework.HotelBookingTest@793f29ff</td></tr>
 </table><p>
 </body>
 </html>

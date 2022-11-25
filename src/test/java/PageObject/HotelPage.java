@@ -71,7 +71,7 @@ public class HotelPage extends AbstractClass{
 	
 	public void BookHotel(HashMap<String,String> input) throws InterruptedException, IOException
 	{
-		ElementToBeClickable(hotel_but);
+		JavaScriptExecutorClick(hotel_but);
 		//WebDriverWait expWait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		//expWait.until(ExpectedConditions.refreshed(ExpectedConditions.presenceOfAllElementsLocatedBy(cityListlocator)));
 		WebElement cityDropBox = driver.findElement(cityDropBoxlocator);
@@ -80,17 +80,14 @@ public class HotelPage extends AbstractClass{
 		System.out.println(input.get("cityname"));
 		cityTextArea.sendKeys(input.get("cityname").substring(0, 4).toString());
 		Thread.sleep(5000);
-		//WaitForListToBeUpdated(cityListlocator);
+		List<WebElement> cityList = driver.findElements(By.xpath("//ul[@id='select2-hotels_city-results']/li"));
 		
-		
-		
-		List<WebElement> cityList = driver.findElements(cityListlocator);
 		for (int i = 0; i < cityList.size(); i++) {
 			String currCity = cityList.get(i).getText();
 			while (!cityList.get(i).getText().equalsIgnoreCase("Searching…")) {
 				if (cityList.get(i).getText().equalsIgnoreCase(input.get("cityname"))) {
 					cityList.get(i).click();
-					ContinueSearch(input);
+					
 					break;
 
 				}
@@ -99,7 +96,7 @@ public class HotelPage extends AbstractClass{
 		}
 
 		
-		
+		ContinueSearch(input);
 		
 	}
 	public void ContinueSearch(HashMap<String,String> input) throws InterruptedException, IOException
@@ -138,7 +135,7 @@ public class HotelPage extends AbstractClass{
 		TravellersDetails(childInclocator,childDeclocator,input.get("Child"),childCurrentCount);
 		
 		travellersDropDown.click();
-		hotelSearch.click();
+		JavaScriptExecutorClick(hotelSearch);
 		if(input.get("Result").equalsIgnoreCase("Not Found"))
 		{
 			System.out.println("Hotels not found");
@@ -231,7 +228,7 @@ public class HotelPage extends AbstractClass{
 			JavaScriptExecutorClick(agreechb);
 			JavaScriptExecutorClick(confirmBookingBut);
 			bookingPage = new BookingPage(driver);
-			bookingPage.BookingDetailsPage(displayedTotalPrice,input);
+			bookingPage.BookingDetailsPage(input);
 
 	}
 }

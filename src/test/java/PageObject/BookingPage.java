@@ -14,6 +14,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import utils.AbstractClass;
 
@@ -35,11 +36,19 @@ public class BookingPage extends AbstractClass {
     By downloadInvoicelocator=By.id("download");
     By Bookingcancellatioinlocator=By.xpath("//input[@value='Request Cancellation']");
     By alertMsglocator=By.cssSelector(".alert-danger");
-	public void BookingDetailsPage(String displayedTotalPrice,HashMap<String,String>input) throws InterruptedException
+	public void BookingDetailsPage(HashMap<String,String>input) throws InterruptedException
 	{
+		if(driver.findElement(By.xpath("//body")).getAttribute("innerText").equalsIgnoreCase("Booking Error Please Try Again."))
+		{
+			System.out.println("Booking Error");
+			Assert.assertTrue(false, "Booking Error");
+		}
+		else
+		{
 		downloadPath = System.getProperty("user.dir");
 		WebElement proceedButt = driver.findElement(Proceedbutlocator);
-		ElementToBeClickable(proceedButt);
+		//ElementToBeClickable(proceedButt);
+		System.out.println("proceedButt "+proceedButt);
 		WebElement payPalConfirmation = driver.findElement(payPalConfirmationloactor);
 		VisibilityWebElementCheck(payPalConfirmation);
 		if (payPalConfirmation.getText().split(" ")[0].equalsIgnoreCase("Paypal")) {
@@ -50,6 +59,7 @@ public class BookingPage extends AbstractClass {
 			BackToBookingdetails(input);
 		} else {
 			System.out.println("Error : PayPal payment page is not reached ");
+		}
 		}
 	}
 	public void BackToBookingdetails(HashMap<String,String>input) throws InterruptedException {

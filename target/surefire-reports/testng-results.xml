@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-11-25T04:42:50 IST" name="Suite" finished-at="2022-11-25T04:43:39 IST" duration-ms="49520">
+    <groups>
+      <group name="Regression">
+        <method signature="FlightBookingTest.FlightBookingTest(java.util.HashMap)[pri:0, instance:Framework.FlightBookingTest@792b749c]" name="FlightBookingTest" class="Framework.FlightBookingTest"/>
+      </group> <!-- Regression -->
+    </groups>
+    <test started-at="2022-11-25T04:42:50 IST" name="Flightbooking" finished-at="2022-11-25T04:43:39 IST" duration-ms="49520">
+      <class name="Framework.FlightBookingTest">
+        <test-method is-config="true" signature="getDriverinstance()[pri:0, instance:Framework.FlightBookingTest@792b749c]" started-at="2022-11-25T04:42:50 IST" name="getDriverinstance" finished-at="2022-11-25T04:43:03 IST" duration-ms="13123" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getDriverinstance -->
+        <test-method signature="FlightBookingTest(java.util.HashMap)[pri:0, instance:Framework.FlightBookingTest@792b749c]" started-at="2022-11-25T04:43:03 IST" name="FlightBookingTest" data-provider="getData" finished-at="2022-11-25T04:43:22 IST" duration-ms="18308" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{returnExpectedDate=15, returnExpectedMonth=April 2023, flyingTo=Kuwait, Kuwait, departureExpectedDate=28, flyingFrom=Dubai, United Arab Emirates, Adults=2, Infants=1, Child=1, departureExpectedMonth=March 2023, Nationality=Andorra, Result=Found}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Booking Error expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Booking Error expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at PageObject.BookingPage.BookingDetailsPage(BookingPage.java:44)
+at PageObject.FlightPage.selectFlight(FlightPage.java:168)
+at PageObject.FlightPage.BookFlight(FlightPage.java:118)
+at Framework.FlightBookingTest.FlightBookingTest(FlightBookingTest.java:24)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:284)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:119)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FlightBookingTest -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:Framework.FlightBookingTest@792b749c]" started-at="2022-11-25T04:43:22 IST" name="closeBrowser" finished-at="2022-11-25T04:43:22 IST" duration-ms="218" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="getDriverinstance()[pri:0, instance:Framework.FlightBookingTest@792b749c]" started-at="2022-11-25T04:43:22 IST" name="getDriverinstance" finished-at="2022-11-25T04:43:30 IST" duration-ms="7248" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getDriverinstance -->
+        <test-method signature="FlightBookingTest(java.util.HashMap)[pri:0, instance:Framework.FlightBookingTest@792b749c]" started-at="2022-11-25T04:43:30 IST" name="FlightBookingTest" data-provider="getData" finished-at="2022-11-25T04:43:39 IST" duration-ms="9426" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{returnExpectedDate=10, returnExpectedMonth=June 2025, flyingTo=Kuopio, Finland, departureExpectedDate=1, flyingFrom=London, Canada, Adults=1, Infants=0, Child=0, departureExpectedMonth=June 2025, Nationality=Andorra, Result=Not Found}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FlightBookingTest -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:Framework.FlightBookingTest@792b749c]" started-at="2022-11-25T04:43:39 IST" name="closeBrowser" finished-at="2022-11-25T04:43:39 IST" duration-ms="158" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- Framework.FlightBookingTest -->
+    </test> <!-- Flightbooking -->
+  </suite> <!-- Suite -->
+</testng-results>

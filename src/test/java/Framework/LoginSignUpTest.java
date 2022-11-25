@@ -9,16 +9,19 @@ import PageObject.LoginSignUpPage;
 import utils.BaseTest;
 
 public class LoginSignUpTest extends BaseTest{
+	public LoginSignUpPage loginSignUpPage;
 	public LoginSignUpTest() throws IOException {
 		super();
+		
 		// TODO Auto-generated constructor stub
 	}
-	public LoginSignUpPage loginSignUpPage;
+	
     @Test
 	public void DoSignUp() throws InterruptedException, IOException
 	{
     	loginSignUpPage = getLoginSignUpPageInstance();
     	loginSignUpPage.signUpNewUser(firstName,lastName,SignupEmail,SignUpPassword,Phone);
+    	loginSignUpPage = null;
     	Assert.assertTrue(true);
 	}
     @Test

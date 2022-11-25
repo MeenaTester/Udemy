@@ -1,67 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-07T20:44:09 IST" name="Default suite" finished-at="2022-11-07T20:45:17 IST" duration-ms="67489">
+  <suite started-at="2022-11-25T05:06:07 IST" name="Suite" finished-at="2022-11-25T05:06:44 IST" duration-ms="36813">
     <groups>
+      <group name="Regression">
+        <method signature="HotelBookingTest.HotelBookingTest(java.util.HashMap)[pri:0, instance:Framework.HotelBookingTest@676cf48]" name="HotelBookingTest" class="Framework.HotelBookingTest"/>
+      </group> <!-- Regression -->
     </groups>
-    <test started-at="2022-11-07T20:44:09 IST" name="Default test" finished-at="2022-11-07T20:45:17 IST" duration-ms="67489">
+    <test started-at="2022-11-25T05:06:07 IST" name="Hotelbooking" finished-at="2022-11-25T05:06:44 IST" duration-ms="36813">
       <class name="Framework.HotelBookingTest">
-        <test-method is-config="true" signature="getDriverinstance()[pri:0, instance:Framework.HotelBookingTest@3e8c3cb]" started-at="2022-11-07T20:44:10 IST" name="getDriverinstance" finished-at="2022-11-07T20:44:18 IST" duration-ms="8082" status="PASS">
+        <test-method is-config="true" signature="getDriverinstance()[pri:0, instance:Framework.HotelBookingTest@676cf48]" started-at="2022-11-25T05:06:07 IST" name="getDriverinstance" finished-at="2022-11-25T05:06:18 IST" duration-ms="10394" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getDriverinstance -->
-        <test-method signature="HotelBookingTest(java.util.HashMap)[pri:0, instance:Framework.HotelBookingTest@3e8c3cb]" started-at="2022-11-07T20:44:18 IST" name="HotelBookingTest" data-provider="getData" finished-at="2022-11-07T20:44:57 IST" duration-ms="39055" status="PASS">
+        <test-method signature="HotelBookingTest(java.util.HashMap)[pri:0, instance:Framework.HotelBookingTest@676cf48]" started-at="2022-11-25T05:06:18 IST" name="HotelBookingTest" data-provider="getData" finished-at="2022-11-25T05:06:41 IST" duration-ms="23605" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{CheckInExpectedDate=1, cityname=Dubai,United Arab Emirates, CheckOutExpectedDate=3, Adults=2, CheckInExpectedMonth=June 2023, HotelName=Oasis Beach Tower, Child=1, Nationality=Andorra, CheckOutExpectedMonth=June 2023, Rooms=1, Result=Found}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- HotelBookingTest -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:Framework.HotelBookingTest@3e8c3cb]" started-at="2022-11-07T20:44:57 IST" name="closeBrowser" finished-at="2022-11-07T20:44:57 IST" duration-ms="256" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="getDriverinstance()[pri:0, instance:Framework.HotelBookingTest@3e8c3cb]" started-at="2022-11-07T20:44:57 IST" name="getDriverinstance" finished-at="2022-11-07T20:45:03 IST" duration-ms="6385" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getDriverinstance -->
-        <test-method signature="HotelBookingTest(java.util.HashMap)[pri:0, instance:Framework.HotelBookingTest@3e8c3cb]" started-at="2022-11-07T20:45:03 IST" name="HotelBookingTest" data-provider="getData" finished-at="2022-11-07T20:45:17 IST" duration-ms="13150" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{CheckInExpectedDate=2, cityname=Indiana,United States, CheckOutExpectedDate=5, Adults=1, CheckInExpectedMonth=September 2023, HotelName=Oasis Beach Tower, Child=0, Nationality=India, CheckOutExpectedMonth=September 2023, Rooms=1, Result=Not Found}]]>
+                <![CDATA[{CheckInExpectedDate=1, cityname=London,United Kingdom, CheckOutExpectedDate=3, Adults=2, CheckInExpectedMonth=June 2026, HotelName=Oasis Beach Tower, Child=1, Nationality=Andorra, CheckOutExpectedMonth=June 2026, Rooms=1, Result=Not Found}]]>
               </value>
             </param>
           </params>
           <exception class="org.openqa.selenium.StaleElementReferenceException">
             <message>
               <![CDATA[stale element reference: element is not attached to the page document
-  (Session info: chrome=107.0.5304.88)
+  (Session info: chrome=107.0.5304.107)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
 Build info: version: '4.4.0', revision: 'e5c75ed026a'
 System info: host: 'LAPTOP-J66Q2AT5', ip: '192.168.1.79', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ae9d3b35bc250d17e9d410eb1917ced4, getElementText {id=36dc474b-6783-4394-a915-83ac0d830edd}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.88, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\revan\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52775}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52775/devtoo..., se:cdpVersion: 107.0.5304.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (ae9d3b35bc250d17e9d410eb1917ced4)] -> xpath: //ul[@id='select2-hotels_city-results']/li]
-Session ID: ae9d3b35bc250d17e9d410eb1917ced4]]>
+Command: [2ad00eb252c2616b8f83330b96c2a930, getElementText {id=b4147371-2a97-4db8-bc14-ff6b6fb3bd51}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\revan\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:51426}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51426/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (2ad00eb252c2616b8f83330b96c2a930)] -> xpath: //ul[@id='select2-hotels_city-results']/li]
+Session ID: 2ad00eb252c2616b8f83330b96c2a930]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=107.0.5304.88)
+  (Session info: chrome=107.0.5304.107)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
 Build info: version: '4.4.0', revision: 'e5c75ed026a'
 System info: host: 'LAPTOP-J66Q2AT5', ip: '192.168.1.79', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ae9d3b35bc250d17e9d410eb1917ced4, getElementText {id=36dc474b-6783-4394-a915-83ac0d830edd}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.88, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\revan\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52775}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52775/devtoo..., se:cdpVersion: 107.0.5304.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (ae9d3b35bc250d17e9d410eb1917ced4)] -> xpath: //ul[@id='select2-hotels_city-results']/li]
-Session ID: ae9d3b35bc250d17e9d410eb1917ced4
+Command: [2ad00eb252c2616b8f83330b96c2a930, getElementText {id=b4147371-2a97-4db8-bc14-ff6b6fb3bd51}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\revan\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:51426}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51426/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (2ad00eb252c2616b8f83330b96c2a930)] -> xpath: //ul[@id='select2-hotels_city-results']/li]
+Session ID: 2ad00eb252c2616b8f83330b96c2a930
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -76,7 +60,7 @@ at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverComman
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
 at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
 at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:207)
-at PageObject.HotelPage.BookHotel(HotelPage.java:89)
+at PageObject.HotelPage.BookHotel(HotelPage.java:86)
 at Framework.HotelBookingTest.HotelBookingTest(HotelBookingTest.java:23)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -112,11 +96,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HotelBookingTest -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:Framework.HotelBookingTest@3e8c3cb]" started-at="2022-11-07T20:45:17 IST" name="closeBrowser" finished-at="2022-11-07T20:45:17 IST" duration-ms="260" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:Framework.HotelBookingTest@676cf48]" started-at="2022-11-25T05:06:43 IST" name="closeBrowser" finished-at="2022-11-25T05:06:44 IST" duration-ms="509" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- Framework.HotelBookingTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Hotelbooking -->
+  </suite> <!-- Suite -->
 </testng-results>
